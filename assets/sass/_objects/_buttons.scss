@@ -1,0 +1,14 @@
+.o-btn {
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  background: transparent;
+  padding: 5px;
+
+  &__wrap {
+    width: 200px;
+    margin: 0 auto;
+  }
+}

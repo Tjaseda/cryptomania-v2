@@ -1,0 +1,167 @@
+.c-form {
+  position: relative;
+  z-index: 10;
+  width: 85%;
+  margin: 0 auto;
+  border-radius: 4px;
+  background-color: rgba(202,197,203,0.3);
+  box-shadow: 0 0 40px 0 rgba(0,0,0,0.2);
+
+  @include breakpoint(medium) {
+    width: 70%;
+  }
+
+  @include breakpoint(mediumLarge) {
+    width: 65%;
+  }
+
+  @include breakpoint(desktop) {
+    width: 60%;
+  }
+
+  @include breakpoint(desktopMd) {
+    width: 48%;
+  }
+
+  @include breakpoint(desktopLarge) {
+    width: 40%;
+  }
+
+  @include breakpoint(large) {
+    width: 34%;
+  }
+
+  &__wrap {
+    margin: 0 auto;
+    padding: 30px;
+
+    input {
+      vertical-align: middle;
+      box-sizing: border-box;
+      border-radius: 4px;
+
+      /* removes yellow input fill of browser */
+      &:-webkit-autofill {
+        -webkit-box-shadow: inset 0 0 0px 9999px white;
+      }
+
+      /* removes blue outline when focused */
+      &:focus {
+        outline: 0;
+        padding-left: 20px;
+
+        &::placeholder {
+          color: transparent;
+        }
+      }
+
+      &::placeholder {
+        font-family: $open_sans;
+        color: #777777;
+        font-size: calculateRem(17px);
+        letter-spacing: 0.39px;
+      }
+    }
+  }
+
+  &__input-wrap {
+    display: flex;
+    width: 100%;
+  }
+
+  &__input {
+    height: 50px;
+    width: 100%;
+    border: 0.5px solid #DADADA;
+    line-height: 1.34;
+    margin-bottom: $offset15;
+    padding: 13px 20px;
+
+    &--first {
+      margin-right: 3px;
+    }
+
+    &--second {
+      margin-left: 3px;
+    }
+
+    @include breakpoint(medium) {
+      display: inline-block;
+    }
+  }
+
+  &__button {
+    height: 55px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: $green;
+    color: $white;
+    font-family: $condensed;
+    font-size: calculateRem(17px);
+    font-weight: bold;
+    letter-spacing: 0.95px;
+    line-height: 1.28;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0.5px solid $green;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+
+    @include breakpoint(medium) {
+      width: 100%;
+    }
+
+    &:active, &:focus {
+      outline: 0;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__check-wrap {
+    margin-top: $offset20;
+
+    input + label {
+      display: block;
+    }
+
+    input {
+      display: none;
+    }
+
+    input + label:before {
+      content: "\2714";
+      font-size: calculateRem(11px);
+      font-weight: bold;
+      border-radius: 0.2em;
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      vertical-align: middle;
+      background-color: $white;
+      color: transparent;
+      transition: .2s;
+    }
+
+    input:checked + label:before {
+      font-size: calculateRem(11px);
+      font-weight: bold;
+      background-color: $white;
+      color: $green;
+    }
+  }
+
+  &__checkbox {
+    color: rgba($white, 0.8);
+    display: block;
+    font-style: italic;
+    padding-left: 5px;
+
+    span {
+      font-size: calculateRem(15px);
+      padding-left: 10px;
+      vertical-align: middle;
+    }
+  }
+}

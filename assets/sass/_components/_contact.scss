@@ -1,0 +1,32 @@
+.c-contact {
+  text-align: center;
+
+  @include breakpoint(small) {
+    text-align: left;
+  }
+
+  &__info {
+    display: block;
+
+    &--two {
+      margin-top: $offset30;
+    }
+
+    @include breakpoint(small) {
+      display: inline-block;
+      width: 49%;
+
+      &--two {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__info-item {
+    margin: 7px 0;
+  }
+
+  &__info-text {
+    padding-left: 7px;
+  }
+}
